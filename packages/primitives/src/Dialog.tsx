@@ -322,7 +322,7 @@ export function Dialog<S extends FieldValues>({
 				show ? (
 					<RDialog.Portal forceMount>
 						<AnimatedDialogOverlay
-							className="fixed inset-0 z-[102] m-px grid place-items-center overflow-y-auto rounded-xl bg-app/50"
+							className="fixed inset-0 z-[102] m-px grid place-items-center overflow-y-auto rounded-xl bg-app/50 backdrop-blur-sm"
 							style={{
 								opacity: styles.opacity,
 							}}
@@ -422,7 +422,7 @@ export const DialogOverlay = ({
 }: RDialog.DialogOverlayProps) => (
 	<RDialog.Overlay
 		className={clsx(
-			"fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+			"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
 			className,
 		)}
 		{...props}
