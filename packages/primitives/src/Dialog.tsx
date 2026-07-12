@@ -321,6 +321,13 @@ export function Dialog<S extends FieldValues>({
 			{transitions((styles, show) =>
 				show ? (
 					<RDialog.Portal forceMount>
+						{/*
+						 * Blur is intentionally omitted here: this overlay animates its
+						 * opacity, and animating opacity on a backdrop-filtered element
+						 * forces a full re-blur every frame (visible stutter on Safari/iOS
+						 * and older Chrome). The composable, non-animated `DialogOverlay`
+						 * below carries `backdrop-blur-sm` instead.
+						 */}
 						<AnimatedDialogOverlay
 							className="fixed inset-0 z-[102] m-px grid place-items-center overflow-y-auto rounded-xl bg-app/50"
 							style={{
@@ -422,7 +429,7 @@ export const DialogOverlay = ({
 }: RDialog.DialogOverlayProps) => (
 	<RDialog.Overlay
 		className={clsx(
-			"fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+			"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
 			className,
 		)}
 		{...props}
