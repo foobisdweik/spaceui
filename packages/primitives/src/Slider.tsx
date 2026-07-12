@@ -5,9 +5,10 @@ import clsx from "clsx";
 
 export const Slider = (props: SliderPrimitive.SliderProps) => {
 	// Radix requires one Thumb per value, so render a thumb for each entry in
-	// the controlled `value` (or uncontrolled `defaultValue`) array. Falls back
-	// to a single thumb when neither is provided.
-	const thumbCount = (props.value ?? props.defaultValue)?.length ?? 1;
+	// the controlled `value` (or uncontrolled `defaultValue`) array. Always
+	// render at least one thumb, since Radix breaks with zero thumbs and an
+	// empty array would otherwise yield a count of 0.
+	const thumbCount = Math.max(1, (props.value ?? props.defaultValue)?.length ?? 1);
 
 	return (
 		<SliderPrimitive.Root
