@@ -322,7 +322,7 @@ export function Dialog<S extends FieldValues>({
 				show ? (
 					<RDialog.Portal forceMount>
 						<AnimatedDialogOverlay
-							className="fixed inset-0 z-[102] m-px grid place-items-center overflow-y-auto rounded-xl bg-app/50 backdrop-blur-sm"
+							className="fixed inset-0 z-[102] m-px grid place-items-center overflow-y-auto rounded-xl bg-app/50"
 							style={{
 								opacity: styles.opacity,
 							}}
