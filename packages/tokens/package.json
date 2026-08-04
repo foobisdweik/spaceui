@@ -10,6 +10,7 @@
 		"./css/themes/light": "./src/css/themes/light.css",
 		"./css/themes/midnight": "./src/css/themes/midnight.css",
 		"./css/themes/noir": "./src/css/themes/noir.css",
+		"./css/themes/oled": "./src/css/themes/oled.css",
 		"./css/themes/slate": "./src/css/themes/slate.css",
 		"./css/themes/nord": "./src/css/themes/nord.css",
 		"./css/themes/mocha": "./src/css/themes/mocha.css",
